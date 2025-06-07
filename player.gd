@@ -17,14 +17,30 @@ var is_pushing = false
 var is_pulling = false
 var pull_body: RigidBody3D = null
 
+var is_dead = false
+var can_move = true
+
+func die():
+	if is_dead:
+		return
+	is_dead = true
+	can_move = false
+	anim.play("Death01")
+	print("Player mati!")
+	await get_tree().create_timer(2.5).timeout
+	print("Respawn atau reload scene di sini")
+	get_tree().reload_current_scene()
 
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return
+
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 	else:
 		velocity.y = 0
 
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and can_move:
 		velocity.y = JUMP_VELOCITY
 		anim.play("Jump_Start")
 
@@ -32,7 +48,7 @@ func _physics_process(delta: float) -> void:
 		var body = raycast.get_collider()
 		var collision_point = raycast.get_collision_point()
 		var dist = global_transform.origin.distance_to(collision_point)
-		if Input.is_action_just_pressed("pull"):
+		if Input.is_action_just_pressed("pull") and can_move:
 			if body is RigidBody3D and dist <= MAX_PULL_DISTANCE:
 				is_pulling = true
 				pull_body = body
@@ -42,7 +58,7 @@ func _physics_process(delta: float) -> void:
 		pull_body = null
 
 	var move_input = 0
-	if not is_pulling:
+	if not is_pulling and can_move:
 		if Input.is_action_pressed("ui_left"):
 			move_input = -1
 		elif Input.is_action_pressed("ui_right"):
@@ -53,7 +69,7 @@ func _physics_process(delta: float) -> void:
 	if is_sprinting:
 		speed = SPRINT_SPEED
 
-	if is_pulling and pull_body:
+	if is_pulling and pull_body and can_move:
 		velocity.x = 0
 		velocity.z = 0
 		var facing_direction = sign(model.rotation_degrees.y)
@@ -70,7 +86,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_input * speed
 		velocity.z = 0
-		if move_input != 0:
+		if move_input != 0 and can_move:
 			model.rotation_degrees.y = -90 if move_input < 0 else 90
 
 	move_and_slide()
@@ -84,6 +100,15 @@ func _physics_process(delta: float) -> void:
 			var push_velocity = push_direction * PUSH_FORCE * delta
 			body.apply_impulse(push_velocity, collision.get_position() - body.global_position)
 			is_pushing = true
+
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var body = collision.get_collider()
+		if body and body.has_method("is_in_group") and body.is_in_group("deadly"):
+			var normal = collision.get_normal()
+			if normal.y < -0.5:
+				die()
+
 
 	if is_on_floor():
 		if not was_on_floor:

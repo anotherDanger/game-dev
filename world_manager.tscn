@@ -1,11 +1,17 @@
-[gd_scene load_steps=25 format=3 uid="uid://dwl7sqplkbw8a"]
+[gd_scene load_steps=35 format=3 uid="uid://dwl7sqplkbw8a"]
 
 [ext_resource type="PackedScene" uid="uid://bos0ixvtcbc5e" path="res://player/AnimationLibrary_Godot_Standard.glb" id="1_3giq8"]
 [ext_resource type="Script" uid="uid://bs85643b1mqjb" path="res://player.gd" id="1_37kqa"]
 [ext_resource type="Script" uid="uid://b4my88yqmt2ib" path="res://ray_cast_3d.gd" id="3_3bbl4"]
 [ext_resource type="Script" uid="uid://0tk2um8nx2sv" path="res://spot_light_3d.gd" id="4_3bbl4"]
 [ext_resource type="PackedScene" uid="uid://dh7nqv53v2in2" path="res://assets/low-pol_furnace.glb" id="4_asylr"]
+[ext_resource type="Script" uid="uid://el3xnjxdmfqw" path="res://room_1.gd" id="4_hswkw"]
 [ext_resource type="PackedScene" uid="uid://w6hcd6hc2lvo" path="res://assets/1/gas_ballon_with_handtruck.glb" id="5_tjuo3"]
+[ext_resource type="Script" uid="uid://cdx6e75bboa1x" path="res://button.gd" id="6_egs4j"]
+[ext_resource type="Script" uid="uid://b2bccgn4bkyu5" path="res://box.gd" id="7_ly5ko"]
+[ext_resource type="Script" uid="uid://bdddv5kmf2wiy" path="res://alert_light.gd" id="8_7i3i7"]
+[ext_resource type="PackedScene" uid="uid://ca4nwb6tsyyj3" path="res://assets/4/control_system.glb" id="10_v4hej"]
+[ext_resource type="Script" uid="uid://s73fdm4j7rfp" path="res://conrol_panel_light.gd" id="11_yoola"]
 
 [sub_resource type="Environment" id="Environment_3bbl4"]
 ambient_light_source = 1
@@ -18,8 +24,10 @@ fog_density = 0.0947
 fog_depth_begin = 0.0
 volumetric_fog_density = 0.0
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ly5ko"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3bbl4"]
-height = 5.738
+height = 4.859
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kwf28"]
 size = Vector3(150, 1, 50)
@@ -48,6 +56,9 @@ size = Vector3(8, 8, 8)
 [sub_resource type="BoxMesh" id="BoxMesh_ly5ko"]
 size = Vector3(8, 8, 8)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_v4hej"]
+size = Vector3(7.895, 7.415, 7.98)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_3bbl4"]
 size = Vector3(1, 18, 10)
 
@@ -69,6 +80,12 @@ size = Vector3(10, 15.9038, 10)
 [sub_resource type="BoxMesh" id="BoxMesh_v4hej"]
 size = Vector3(10, 15.904, 10)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ly5ko"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yoola"]
+size = Vector3(2, 2, 2)
+
 [node name="WorldManager" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -77,6 +94,10 @@ environment = SubResource("Environment_3bbl4")
 [node name="Player" type="CharacterBody3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0387926, 5.918)
 script = ExtResource("1_37kqa")
+
+[node name="Head" type="CollisionShape3D" parent="WorldEnvironment/Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.2567, 5.64668, 0)
+shape = SubResource("SphereShape3D_ly5ko")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.2639, 3.30007, 0)
@@ -98,6 +119,7 @@ transform = Transform3D(1, 0, 0, 0, 0.999096, 0.0425034, 0, -0.0425034, 0.999096
 fov = 66.6
 
 [node name="Room1" type="StaticBody3D" parent="WorldEnvironment"]
+script = ExtResource("4_hswkw")
 
 [node name="Top" type="CollisionShape3D" parent="WorldEnvironment/Room1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2259, 24.0101, 0)
@@ -148,16 +170,24 @@ transform = Transform3D(-0.0515517, 0, -0.99867, 0, 1, 0, 0.99867, 0, -0.0515517
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -22.8586, 1.1806, -20.4655)
 
 [node name="Box" type="RigidBody3D" parent="WorldEnvironment/Room1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.02455, 5.05055)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.9372, 23.0468, 6.70142)
 mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_tjuo3")
 lock_rotation = true
+freeze = true
+script = ExtResource("7_ly5ko")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room1/Box"]
 shape = SubResource("BoxShape3D_7i3i7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room1/Box/CollisionShape3D"]
 mesh = SubResource("BoxMesh_ly5ko")
+
+[node name="HeadDetector" type="Area3D" parent="WorldEnvironment/Room1/Box"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room1/Box/HeadDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.934916, 0)
+shape = SubResource("BoxShape3D_v4hej")
 
 [node name="Wall3" type="CollisionShape3D" parent="WorldEnvironment/Room1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.6588, 7.28934, 7.4803)
@@ -188,6 +218,38 @@ shape = SubResource("BoxShape3D_hswkw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0854111, 0, 0)
 mesh = SubResource("BoxMesh_v4hej")
 
+[node name="Button" type="Area3D" parent="WorldEnvironment/Room1"]
+script = ExtResource("6_egs4j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room1/Button"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.4149, 6.10213, 6.30279)
+shape = SubResource("BoxShape3D_ly5ko")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room1/Button/CollisionShape3D"]
+mesh = SubResource("BoxMesh_yoola")
+
+[node name="AlertLight" type="SpotLight3D" parent="WorldEnvironment/Room1"]
+transform = Transform3D(-0.0535785, 0.824985, -0.562609, 0.0782114, 0.565154, 0.82127, 0.995496, 0, -0.0948034, 67.7992, 19.809, 4.30667)
+light_color = Color(1, 0.0705882, 0, 1)
+light_energy = 16.0
+shadow_enabled = true
+shadow_bias = 10.0
+spot_range = 124.712
+spot_angle = 20.1
+script = ExtResource("8_7i3i7")
+
+[node name="Sketchfab_Scene3" parent="WorldEnvironment/Room1" instance=ExtResource("10_v4hej")]
+transform = Transform3D(-3.0598e-07, 0, -7, 0, 7, 0, 7, 0, -3.0598e-07, 43.5723, 2.41602, -23.2526)
+
+[node name="ConrolPanelLight" type="SpotLight3D" parent="WorldEnvironment/Room1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 43.3521, 24.0159, -20.2951)
+light_color = Color(1, 1, 0.780392, 1)
+light_energy = 9.727
+shadow_enabled = true
+spot_range = 390.074
+spot_angle = 24.84
+script = ExtResource("11_yoola")
+
 [node name="SpotLight3D" type="SpotLight3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, -0.912977, 0.408012, 0, -0.408012, -0.912977, -32.8261, 49.0785, -75.1972)
 light_energy = 100.0
@@ -199,3 +261,9 @@ shadow_normal_bias = 6.768
 spot_range = 2474.18
 spot_angle = 52.32
 script = ExtResource("4_3bbl4")
+
+[node name="ButtonLight" type="OmniLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.2126, 5.85723, 6.26668)
+light_color = Color(1, 0.2, 0.164706, 1)
+light_energy = 16.0
+omni_range = 2.777
