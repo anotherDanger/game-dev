@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dwl7sqplkbw8a"]
+[gd_scene load_steps=90 format=3 uid="uid://dwl7sqplkbw8a"]
 
 [ext_resource type="PackedScene" uid="uid://bos0ixvtcbc5e" path="res://player/AnimationLibrary_Godot_Standard.glb" id="1_3giq8"]
 [ext_resource type="Script" uid="uid://bs85643b1mqjb" path="res://player.gd" id="1_37kqa"]
@@ -12,28 +12,57 @@
 [ext_resource type="Script" uid="uid://bdddv5kmf2wiy" path="res://alert_light.gd" id="8_7i3i7"]
 [ext_resource type="PackedScene" uid="uid://ca4nwb6tsyyj3" path="res://assets/4/control_system.glb" id="10_v4hej"]
 [ext_resource type="Script" uid="uid://s73fdm4j7rfp" path="res://conrol_panel_light.gd" id="11_yoola"]
+[ext_resource type="PackedScene" uid="uid://bxqcea3uk6ob4" path="res://assets/lamps/1/lamp_02_lowpoly.glb" id="13_ds2t8"]
+[ext_resource type="Script" uid="uid://cbvyuyidt6yux" path="res://room_2_light.gd" id="14_rg6pr"]
+[ext_resource type="PackedScene" uid="uid://dg6nijbkl70ja" path="res://assets/2/metallic_pallet_factory_store.glb" id="15_845gq"]
+[ext_resource type="PackedScene" uid="uid://b8a5u11ilsdjh" path="res://assets/forklift/forklift.glb" id="16_yc3dq"]
+[ext_resource type="PackedScene" uid="uid://del7jqs01xxx3" path="res://assets/people/worker_talk_animation.glb" id="17_j7ylc"]
+[ext_resource type="Script" uid="uid://dvkt3084p5lgo" path="res://assets/people/worker1_talk_animation.gd" id="18_yc3dq"]
+[ext_resource type="PackedScene" uid="uid://w5rjnpto38a" path="res://assets/column_factory/column_-foundation-_factory_-_14mb.glb" id="19_j7ylc"]
+[ext_resource type="Script" uid="uid://cl5fhut1ml6a" path="res://fan.gd" id="20_j27mq"]
+[ext_resource type="PackedScene" uid="uid://dn7nvnw4nla14" path="res://assets/fan/fan_6_mb.glb" id="20_tjl1n"]
+[ext_resource type="PackedScene" uid="uid://bdktbx2a5dxvb" path="res://assets/stairs/escada_movel_-_moving_ladder.glb" id="22_p8lgi"]
+[ext_resource type="PackedScene" uid="uid://buh71j6wirudv" path="res://assets/ironbars/iron_bar_window-6.glb" id="23_bkkq2"]
+[ext_resource type="Script" uid="uid://jeh5rueqq284" path="res://guard1.gd" id="24_bkkq2"]
+[ext_resource type="Script" uid="uid://dyf584uekck8o" path="res://ray_cast_guard.gd" id="25_v2tj1"]
+[ext_resource type="PackedScene" uid="uid://blb5g3d3dcb60" path="res://assets/hanged/hanged_man.glb" id="26_44ll0"]
+[ext_resource type="Script" uid="uid://cvc2xf8acfcau" path="res://guard_2.gd" id="26_m0gyd"]
+[ext_resource type="Script" uid="uid://ckshnhrkpx8pe" path="res://guard_3.gd" id="28_ynnun"]
+[ext_resource type="Script" uid="uid://bur4p565627oe" path="res://guard_4.gd" id="29_ucq56"]
+[ext_resource type="Script" uid="uid://byu0cc5bvq7rp" path="res://assets/fan/fanRoom3.gd" id="30_gvglj"]
+[ext_resource type="PackedScene" uid="uid://b22nsuocglgq" path="res://assets/building2/building_brutalist_quadrhomb.glb" id="31_khygk"]
 
 [sub_resource type="Environment" id="Environment_3bbl4"]
 ambient_light_source = 1
-ambient_light_energy = 16.0
+ambient_light_color = Color(1, 0.803701, 0.712157, 1)
+ambient_light_energy = 0.1
 reflected_light_source = 1
+glow_enabled = true
+glow_blend_mode = 1
+glow_hdr_luminance_cap = 235.66
 fog_enabled = true
 fog_mode = 1
-fog_light_energy = 1.67
-fog_density = 0.0947
-fog_depth_begin = 0.0
-volumetric_fog_density = 0.0
+fog_light_color = Color(0.290196, 0.352941, 0.415686, 1)
+fog_light_energy = 2.03
+fog_density = 1.0
+fog_depth_end = 409.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ly5ko"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3bbl4"]
-height = 4.859
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j7ylc"]
+height = 5.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ds2t8"]
+size = Vector3(150, 50, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rg6pr"]
+size = Vector3(150, 50, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kwf28"]
 size = Vector3(150, 1, 50)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3bbl4"]
-size = Vector3(150, 1, 50)
+size = Vector3(150, 20, 50)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tjuo3"]
 size = Vector3(150, 19.634, 1)
@@ -66,13 +95,10 @@ size = Vector3(1, 18, 10)
 size = Vector3(1, 18, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_egs4j"]
-size = Vector3(1, 25, 20)
+size = Vector3(1, 25, 20.7241)
 
 [sub_resource type="BoxMesh" id="BoxMesh_hswkw"]
-size = Vector3(1, 25, 20)
-
-[sub_resource type="BoxMesh" id="BoxMesh_7i3i7"]
-size = Vector3(1, 25, 20)
+size = Vector3(1, 50, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hswkw"]
 size = Vector3(10, 15.9038, 10)
@@ -86,13 +112,117 @@ size = Vector3(2, 2, 2)
 [sub_resource type="BoxMesh" id="BoxMesh_yoola"]
 size = Vector3(2, 2, 2)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yoola"]
+size = Vector3(1, 25, 28)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ds2t8"]
+size = Vector3(1, 25, 28)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rg6pr"]
+size = Vector3(20, 30, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v1f3q"]
+size = Vector3(20, 30, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v1f3q"]
+size = Vector3(100, 10, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j0jij"]
+size = Vector3(100, 10, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_845gq"]
+size = Vector3(100, 20, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yc3dq"]
+size = Vector3(100, 20, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j7ylc"]
+size = Vector3(1, 70, 62.503)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tjl1n"]
+size = Vector3(1, 70, 62.503)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j27mq"]
+size = Vector3(100, 70, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_34dpo"]
+size = Vector3(100, 70, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tjl1n"]
+size = Vector3(3.28, 70, 3.075)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_34dpo"]
+size = Vector3(3.949, 47.1, 75.847)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p8lgi"]
+size = Vector3(3.949, 47.1, 75.847)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bkkq2"]
+size = Vector3(20, 50, 24)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v2tj1"]
+size = Vector3(20, 50, 24)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v2tj1"]
+size = Vector3(1, 14, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_44ll0"]
+size = Vector3(1, 14, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p8lgi"]
+size = Vector3(100, 5, 22.42)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bkkq2"]
+size = Vector3(100, 5, 22.42)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_44ll0"]
+size = Vector3(200, 30, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m0gyd"]
+size = Vector3(200, 30, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ynnun"]
+size = Vector3(1, 50, 77.7732)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ucq56"]
+size = Vector3(1, 50, 77.773)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gvglj"]
+size = Vector3(200, 50, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_khygk"]
+size = Vector3(200, 50, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p8lgi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m0gyd"]
+size = Vector3(1.76, 1.527, 14.4644)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ucq56"]
+size = Vector3(10, 15, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gvglj"]
+size = Vector3(10, 15, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_khygk"]
+size = Vector3(200, 30, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1otl7"]
+size = Vector3(200, 30, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1otl7"]
+size = Vector3(1, 50.3822, 74.499)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mhhix"]
+size = Vector3(1, 50.382, 74.499)
+
 [node name="WorldManager" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3bbl4")
 
 [node name="Player" type="CharacterBody3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0387926, 5.918)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 333.524, 87.8612, 5.918)
 script = ExtResource("1_37kqa")
 
 [node name="Head" type="CollisionShape3D" parent="WorldEnvironment/Player"]
@@ -100,8 +230,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.2567, 5.64668, 0)
 shape = SubResource("SphereShape3D_ly5ko")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.2639, 3.30007, 0)
-shape = SubResource("CapsuleShape3D_3bbl4")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.264, 3.07745, -0.235106)
+shape = SubResource("CapsuleShape3D_j7ylc")
 
 [node name="AnimationLibrary_Godot_Standard" parent="WorldEnvironment/Player/CollisionShape3D" instance=ExtResource("1_3giq8")]
 transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 0, -2.8195, 0)
@@ -115,24 +245,26 @@ debug_shape_custom_color = Color(0.971079, 0, 0.440699, 1)
 script = ExtResource("3_3bbl4")
 
 [node name="Camera3D" type="Camera3D" parent="WorldEnvironment/Player"]
-transform = Transform3D(1, 0, 0, 0, 0.999096, 0.0425034, 0, -0.0425034, 0.999096, -45.611, 10.5482, 29.7714)
+transform = Transform3D(1, 0, 0, 0, 0.999096, 0.0425034, 0, -0.0425034, 0.999096, -45.611, 10.5482, 33.4662)
 fov = 66.6
 
 [node name="Room1" type="StaticBody3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 87.0757, 0)
 script = ExtResource("4_hswkw")
 
 [node name="Top" type="CollisionShape3D" parent="WorldEnvironment/Room1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2259, 24.0101, 0)
-shape = SubResource("BoxShape3D_kwf28")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4241, 48.2228, 0)
+shape = SubResource("BoxShape3D_ds2t8")
 
-[node name="Top" type="MeshInstance3D" parent="WorldEnvironment/Room1/Top"]
-mesh = SubResource("BoxMesh_3bbl4")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room1/Top"]
+mesh = SubResource("BoxMesh_rg6pr")
 
 [node name="Floor" type="CollisionShape3D" parent="WorldEnvironment/Room1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.932, 0, 0)
 shape = SubResource("BoxShape3D_kwf28")
 
 [node name="Floor" type="MeshInstance3D" parent="WorldEnvironment/Room1/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.90833, 0)
 mesh = SubResource("BoxMesh_3bbl4")
 
 [node name="Wall2" type="CollisionShape3D" parent="WorldEnvironment/Room1"]
@@ -201,14 +333,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.806, 11.939, 22.28)
 shape = SubResource("BoxShape3D_egs4j")
 
 [node name="Wall4" type="MeshInstance3D" parent="WorldEnvironment/Room1/Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.1085, 0)
 mesh = SubResource("BoxMesh_hswkw")
-
-[node name="Wall5" type="CollisionShape3D" parent="WorldEnvironment/Room1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.806, 11.91, -7.57412)
-shape = SubResource("BoxShape3D_egs4j")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room1/Wall5"]
-mesh = SubResource("BoxMesh_7i3i7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.5347, 8.27629, 7.27112)
@@ -250,20 +376,477 @@ spot_range = 390.074
 spot_angle = 24.84
 script = ExtResource("11_yoola")
 
+[node name="Wall5" type="CollisionShape3D" parent="WorldEnvironment/Room1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.3372, 11.7429, -11.3179)
+shape = SubResource("BoxShape3D_yoola")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room1/Wall5"]
+mesh = SubResource("BoxMesh_ds2t8")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="WorldEnvironment/Room1"]
+transform = Transform3D(1, 0, 0, 0, -0.132205, 0.991222, 0, -0.991222, -0.132205, 0, 31.4869, -24.1852)
+light_energy = 16.0
+shadow_enabled = true
+spot_range = 59.166
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="WorldEnvironment/Room1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.8249, 15.1183, 0)
+shape = SubResource("BoxShape3D_rg6pr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room1/CollisionShape3D2"]
+mesh = SubResource("BoxMesh_v1f3q")
+
 [node name="SpotLight3D" type="SpotLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, -0.912977, 0.408012, 0, -0.408012, -0.912977, -32.8261, 49.0785, -75.1972)
-light_energy = 100.0
+transform = Transform3D(1, 0, 0, 0, -0.912977, 0.408012, 0, -0.408012, -0.912977, -32.8261, 136.154, -75.1972)
+light_color = Color(0.290196, 0.352941, 0.415686, 1)
+light_energy = 1000.0
 light_volumetric_fog_energy = 0.0
-light_specular = 0.0
 shadow_enabled = true
 shadow_bias = 0.02
 shadow_normal_bias = 6.768
-spot_range = 2474.18
+spot_range = 2479.2
+spot_attenuation = 0.8
 spot_angle = 52.32
 script = ExtResource("4_3bbl4")
 
 [node name="ButtonLight" type="OmniLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.2126, 5.85723, 6.26668)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.2126, 92.9329, 6.26668)
 light_color = Color(1, 0.2, 0.164706, 1)
 light_energy = 16.0
 omni_range = 2.777
+
+[node name="Room2" type="StaticBody3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 87.0757, 0)
+
+[node name="Top" type="CollisionShape3D" parent="WorldEnvironment/Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.551, 64.9103, -25.8672)
+shape = SubResource("BoxShape3D_v1f3q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room2/Top"]
+mesh = SubResource("BoxMesh_j0jij")
+
+[node name="Floor" type="CollisionShape3D" parent="WorldEnvironment/Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.157, -9.15153, -24.9532)
+shape = SubResource("BoxShape3D_845gq")
+
+[node name="Floor" type="MeshInstance3D" parent="WorldEnvironment/Room2/Floor"]
+mesh = SubResource("BoxMesh_yc3dq")
+
+[node name="Wall1" type="CollisionShape3D" parent="WorldEnvironment/Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.3181, 35.5913, -44.6968)
+shape = SubResource("BoxShape3D_j7ylc")
+
+[node name="Wall1" type="MeshInstance3D" parent="WorldEnvironment/Room2/Wall1"]
+mesh = SubResource("BoxMesh_tjl1n")
+
+[node name="Wall2" type="CollisionShape3D" parent="WorldEnvironment/Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.082, 34.8014, -75.6252)
+shape = SubResource("BoxShape3D_j27mq")
+
+[node name="Wall2" type="MeshInstance3D" parent="WorldEnvironment/Room2/Wall2"]
+mesh = SubResource("BoxMesh_34dpo")
+
+[node name="Lamp1" parent="WorldEnvironment/Room2" instance=ExtResource("13_ds2t8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.004, 56.6925, -52.6337)
+
+[node name="Room2light" type="SpotLight3D" parent="WorldEnvironment/Room2/Lamp1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0357819, 1.82226, 6.82758)
+light_energy = 16.0
+shadow_enabled = true
+spot_range = 840.934
+spot_angle = 57.32
+spot_angle_attenuation = 5.65685
+script = ExtResource("14_rg6pr")
+
+[node name="Lamp2" parent="WorldEnvironment/Room2" instance=ExtResource("13_ds2t8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.154, 56.6925, -52.6337)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="WorldEnvironment/Room2/Lamp2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0357819, 1.82226, -0.253384)
+light_energy = 6.465
+shadow_enabled = true
+spot_range = 94.637
+spot_angle = 26.41
+
+[node name="Lamp3" parent="WorldEnvironment/Room2" instance=ExtResource("13_ds2t8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 172.559, 56.6925, -52.6337)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="WorldEnvironment/Room2/Lamp3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0357819, 1.82226, -0.253384)
+light_energy = 16.0
+shadow_enabled = true
+spot_range = 94.637
+spot_angle = 26.41
+
+[node name="Metals" parent="WorldEnvironment/Room2" instance=ExtResource("15_845gq")]
+transform = Transform3D(-1.96701e-09, 0, -0.045, 0, 0.045, 0, 0.045, 0, -1.96701e-09, 120.545, 0, -53.6129)
+
+[node name="Forklift" parent="WorldEnvironment/Room2" instance=ExtResource("16_yc3dq")]
+transform = Transform3D(-0.280818, 0, 0.855068, 0, 0.9, 0, -0.855068, 0, -0.280818, 149.493, 7.04329, -24.1933)
+
+[node name="Worker1" parent="WorldEnvironment/Room2" instance=ExtResource("17_j7ylc")]
+transform = Transform3D(-2.57196, 0, 1.54435, 0, 3, 0, -1.54435, 0, -2.57196, 126.651, 0.850641, -22.0878)
+script = ExtResource("18_yc3dq")
+
+[node name="Worker2" parent="WorldEnvironment/Room2" instance=ExtResource("17_j7ylc")]
+transform = Transform3D(-2.57196, 0, 1.54435, 0, 3, 0, -1.54435, 0, -2.57196, 135.738, 0.850641, -22.0878)
+
+[node name="Worker3" parent="WorldEnvironment/Room2" instance=ExtResource("17_j7ylc")]
+transform = Transform3D(-2.57196, 0, 1.54435, 0, 3, 0, -1.54435, 0, -2.57196, 146.941, 0.850641, -49.9731)
+
+[node name="Worker4" parent="WorldEnvironment/Room2" instance=ExtResource("17_j7ylc")]
+transform = Transform3D(-2.57196, 0, 1.54435, 0, 3, 0, -1.54435, 0, -2.57196, 169.64, 0.850641, -22.0878)
+
+[node name="Worker5" parent="WorldEnvironment/Room2" instance=ExtResource("17_j7ylc")]
+transform = Transform3D(1.04689, 0, -2.81141, 0, 3, 0, 2.81141, 0, 1.04689, 131.641, 0.850641, -24.7628)
+
+[node name="Column_Foundation1" parent="WorldEnvironment/Room2" instance=ExtResource("19_j7ylc")]
+transform = Transform3D(-7.09217e-07, 0, -16.225, 0, 16.225, 0, 16.225, 0, -7.09217e-07, 170.175, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.877, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.671158, 34.9413, 0.0581453)
+shape = SubResource("BoxShape3D_tjl1n")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="WorldEnvironment/Room2/StaticBody3D/CollisionShape3D"]
+transform = Transform3D(0.989751, 0.10739, 0.0941257, 0, -0.659136, 0.752024, 0.142802, -0.744317, -0.652381, 7.16232, 20.9382, -15.8056)
+light_energy = 50.0
+shadow_enabled = true
+shadow_normal_bias = 10.0
+shadow_blur = 1.14
+spot_range = 102.432
+spot_angle = 21.9
+
+[node name="Wall3" type="CollisionShape3D" parent="WorldEnvironment/Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.02, 36.4798, -14.1385)
+shape = SubResource("BoxShape3D_34dpo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room2/Wall3"]
+mesh = SubResource("BoxMesh_p8lgi")
+
+[node name="Wall4" type="CollisionShape3D" parent="WorldEnvironment/Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 201.122, 15.4872, -63.8219)
+shape = SubResource("BoxShape3D_bkkq2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room2/Wall4"]
+mesh = SubResource("BoxMesh_v2tj1")
+
+[node name="Room2Light" type="SpotLight3D" parent="WorldEnvironment/Room2"]
+transform = Transform3D(0.216313, -0.173658, 0.960756, -0.733839, 0.620142, 0.277315, -0.643963, -0.765027, 0.00670746, 237.221, 69.7977, -64.2521)
+light_color = Color(0.290196, 0.352941, 0.415686, 1)
+light_energy = 500.0
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 10.0
+shadow_blur = 0.293
+spot_range = 110.498
+spot_angle = 19.29
+
+[node name="Node3D" type="Node3D" parent="WorldEnvironment/Room2"]
+script = ExtResource("20_j27mq")
+
+[node name="Sketchfab_Scene6" parent="WorldEnvironment/Room2/Node3D" instance=ExtResource("20_tjl1n")]
+transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, 198.82, 50.6731, -63.2007)
+
+[node name="Sketchfab_Scene" parent="WorldEnvironment/Room2" instance=ExtResource("22_p8lgi")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 141.031, 4.3645, -51.1559)
+
+[node name="IronBars" type="Node3D" parent="WorldEnvironment/Room2"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Room2/IronBars"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room2/IronBars/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.434, 6.37712, -33.6665)
+shape = SubResource("BoxShape3D_v2tj1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room2/IronBars/StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_44ll0")
+
+[node name="IronBar1" parent="WorldEnvironment/Room2/IronBars" instance=ExtResource("23_bkkq2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 192.928, 0, -42.5181)
+
+[node name="IronBar2" parent="WorldEnvironment/Room2/IronBars" instance=ExtResource("23_bkkq2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 192.928, 0, -24.132)
+
+[node name="IronBar3" parent="WorldEnvironment/Room2/IronBars" instance=ExtResource("23_bkkq2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 192.928, 0, -5.70083)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="WorldEnvironment/Room2/IronBars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36.5755)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room2/IronBars/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.434, 6.37712, -33.6665)
+shape = SubResource("BoxShape3D_v2tj1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room2/IronBars/StaticBody3D2/CollisionShape3D"]
+mesh = SubResource("BoxMesh_44ll0")
+
+[node name="Bridge1" type="StaticBody3D" parent="WorldEnvironment"]
+
+[node name="Bridge1" type="CollisionShape3D" parent="WorldEnvironment/Bridge1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236.484, 85.2382, 13.79)
+shape = SubResource("BoxShape3D_p8lgi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Bridge1/Bridge1"]
+mesh = SubResource("BoxMesh_bkkq2")
+
+[node name="Room3" type="StaticBody3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 285.931, 87.456, 13.5234)
+
+[node name="Floor" type="CollisionShape3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.478, -14.7483, -38.6503)
+shape = SubResource("BoxShape3D_44ll0")
+
+[node name="Floor" type="MeshInstance3D" parent="WorldEnvironment/Room3/Floor"]
+mesh = SubResource("BoxMesh_m0gyd")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="WorldEnvironment/Room3/Floor"]
+transform = Transform3D(1, 0, 0, 0, -0.782206, 0.62302, 0, -0.62302, -0.782206, -73.458, 61.1105, -47.6178)
+light_energy = 40.0
+shadow_enabled = true
+shadow_bias = 0.11
+shadow_normal_bias = 0.0
+spot_range = 236.19
+spot_angle = 17.57
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="WorldEnvironment/Room3/Floor"]
+transform = Transform3D(0.938836, 0, 0.344364, -0.0986573, 0.958083, 0.268968, -0.32993, -0.286491, 0.899483, -42.1708, 36.5771, 97.7707)
+light_color = Color(0.456889, 0.535387, 0.614179, 1)
+light_energy = 16.0
+spot_range = 139.288
+spot_angle = 12.43
+
+[node name="Wall1" type="CollisionShape3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.0986, -49.3977)
+shape = SubResource("BoxShape3D_ynnun")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room3/Wall1"]
+mesh = SubResource("BoxMesh_ucq56")
+
+[node name="Wall2" type="CollisionShape3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.169, 24.9246, -88.4014)
+shape = SubResource("BoxShape3D_gvglj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room3/Wall2"]
+mesh = SubResource("BoxMesh_khygk")
+
+[node name="Guard1" type="CharacterBody3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 15, -1.178, -43.6549)
+collision_layer = 7
+script = ExtResource("24_bkkq2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room3/Guard1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27868, 3.23371)
+shape = SubResource("CapsuleShape3D_p8lgi")
+
+[node name="AnimationLibrary_Godot_Standard" parent="WorldEnvironment/Room3/Guard1/CollisionShape3D" instance=ExtResource("1_3giq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00011, -0.141606)
+
+[node name="RayCast3D" type="RayCast3D" parent="WorldEnvironment/Room3/Guard1/CollisionShape3D/AnimationLibrary_Godot_Standard"]
+transform = Transform3D(0.0540788, -0.761552, -0.645843, 0, 0.64679, -0.762668, 0.998537, 0.0412442, 0.0349776, 0, 0.565, 0)
+target_position = Vector3(90, 0, 2.525)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+script = ExtResource("25_v2tj1")
+
+[node name="Detector" type="Area3D" parent="WorldEnvironment/Room3/Guard1/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.31059, 4.95638)
+collision_layer = 2
+
+[node name="VisionArea" type="CollisionShape3D" parent="WorldEnvironment/Room3/Guard1/CollisionShape3D/Detector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0656738, 1.08075, 2.14404)
+shape = SubResource("BoxShape3D_m0gyd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.6177, -0.875298, -17.4824)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8548, -1.40592)
+shape = SubResource("BoxShape3D_ucq56")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room3/StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_gvglj")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.389, -1.34232, -22.8523)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room3/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8548, -1.40592)
+shape = SubResource("BoxShape3D_ucq56")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room3/StaticBody3D2/CollisionShape3D"]
+mesh = SubResource("BoxMesh_gvglj")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5281, 1.84418, -13.5234)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room3/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8548, -1.40592)
+shape = SubResource("BoxShape3D_ucq56")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room3/StaticBody3D3/CollisionShape3D"]
+mesh = SubResource("BoxMesh_gvglj")
+
+[node name="Guard2" type="CharacterBody3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 47.1595, -1.178, -45.8566)
+collision_layer = 7
+script = ExtResource("26_m0gyd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room3/Guard2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27868, 3.23371)
+shape = SubResource("CapsuleShape3D_p8lgi")
+
+[node name="AnimationLibrary_Godot_Standard" parent="WorldEnvironment/Room3/Guard2/CollisionShape3D" instance=ExtResource("1_3giq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00011, -0.141606)
+
+[node name="RayCast3D" type="RayCast3D" parent="WorldEnvironment/Room3/Guard2/CollisionShape3D/AnimationLibrary_Godot_Standard"]
+transform = Transform3D(0.0540788, -0.761552, -0.645843, 0, 0.64679, -0.762668, 0.998537, 0.0412442, 0.0349776, 0, 0.565, 0)
+target_position = Vector3(90, 0, 5.44)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+script = ExtResource("25_v2tj1")
+
+[node name="Detector" type="Area3D" parent="WorldEnvironment/Room3/Guard2/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.31059, 4.95638)
+collision_layer = 2
+
+[node name="VisionArea" type="CollisionShape3D" parent="WorldEnvironment/Room3/Guard2/CollisionShape3D/Detector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0656738, 1.08075, 0.162848)
+shape = SubResource("BoxShape3D_m0gyd")
+
+[node name="Ceiling" type="Node3D" parent="WorldEnvironment/Room3"]
+
+[node name="Sketchfab_Scene" parent="WorldEnvironment/Room3/Ceiling" instance=ExtResource("26_44ll0")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 52.6371, 31.8813, -52.2764)
+
+[node name="Guard3" type="CharacterBody3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 105.496, -1.178, -50.18)
+collision_layer = 7
+script = ExtResource("28_ynnun")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room3/Guard3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27868, 3.23371)
+shape = SubResource("CapsuleShape3D_p8lgi")
+
+[node name="AnimationLibrary_Godot_Standard" parent="WorldEnvironment/Room3/Guard3/CollisionShape3D" instance=ExtResource("1_3giq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00011, -0.141606)
+
+[node name="RayCast3D" type="RayCast3D" parent="WorldEnvironment/Room3/Guard3/CollisionShape3D/AnimationLibrary_Godot_Standard"]
+transform = Transform3D(0.0540788, -0.761552, -0.645843, 0, 0.64679, -0.762668, 0.998537, 0.0412442, 0.0349776, 0, 0.565, 0)
+target_position = Vector3(90, 0, 5.44)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+script = ExtResource("25_v2tj1")
+
+[node name="Detector" type="Area3D" parent="WorldEnvironment/Room3/Guard3/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.31059, 4.95638)
+collision_layer = 2
+
+[node name="VisionArea" type="CollisionShape3D" parent="WorldEnvironment/Room3/Guard3/CollisionShape3D/Detector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0656738, 1.08075, 0.162848)
+shape = SubResource("BoxShape3D_m0gyd")
+
+[node name="Guard4" type="CharacterBody3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 88.6331, -1.178, -80.1822)
+collision_layer = 7
+script = ExtResource("29_ucq56")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room3/Guard4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27868, 3.23371)
+shape = SubResource("CapsuleShape3D_p8lgi")
+
+[node name="AnimationLibrary_Godot_Standard" parent="WorldEnvironment/Room3/Guard4/CollisionShape3D" instance=ExtResource("1_3giq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00011, -0.141606)
+
+[node name="RayCast3D" type="RayCast3D" parent="WorldEnvironment/Room3/Guard4/CollisionShape3D/AnimationLibrary_Godot_Standard"]
+transform = Transform3D(0.0540788, -0.761552, -0.645843, 0, 0.64679, -0.762668, 0.998537, 0.0412442, 0.0349776, 0, 0.565, 0)
+target_position = Vector3(90, 0, 5.44)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+script = ExtResource("25_v2tj1")
+
+[node name="Detector" type="Area3D" parent="WorldEnvironment/Room3/Guard4/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.31059, 4.95638)
+collision_layer = 2
+
+[node name="VisionArea" type="CollisionShape3D" parent="WorldEnvironment/Room3/Guard4/CollisionShape3D/Detector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0656738, 1.08075, 0.162848)
+shape = SubResource("BoxShape3D_m0gyd")
+
+[node name="Guard5" type="CharacterBody3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 134.203, -1.178, -64.1181)
+collision_layer = 7
+script = ExtResource("24_bkkq2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Room3/Guard5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27868, 3.23371)
+shape = SubResource("CapsuleShape3D_p8lgi")
+
+[node name="AnimationLibrary_Godot_Standard" parent="WorldEnvironment/Room3/Guard5/CollisionShape3D" instance=ExtResource("1_3giq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00011, -0.141606)
+
+[node name="RayCast3D" type="RayCast3D" parent="WorldEnvironment/Room3/Guard5/CollisionShape3D/AnimationLibrary_Godot_Standard"]
+transform = Transform3D(0.0540788, -0.761552, -0.645843, 0, 0.64679, -0.762668, 0.998537, 0.0412442, 0.0349776, 0, 0.565, 0)
+target_position = Vector3(90, 0, 5.44)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+script = ExtResource("25_v2tj1")
+
+[node name="Detector" type="Area3D" parent="WorldEnvironment/Room3/Guard5/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.31059, 4.95638)
+collision_layer = 2
+
+[node name="VisionArea" type="CollisionShape3D" parent="WorldEnvironment/Room3/Guard5/CollisionShape3D/Detector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0656738, 1.08075, 0.162848)
+shape = SubResource("BoxShape3D_m0gyd")
+
+[node name="Top" type="CollisionShape3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.8321, 65.3456, -38.3476)
+shape = SubResource("BoxShape3D_khygk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room3/Top"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.633408, 0)
+mesh = SubResource("BoxMesh_1otl7")
+
+[node name="Wall3" type="CollisionShape3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200.795, 25.3684, -51.8566)
+shape = SubResource("BoxShape3D_1otl7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Room3/Wall3"]
+mesh = SubResource("BoxMesh_mhhix")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 92.2558, 48.7619, -50.1919)
+light_energy = 70.0
+shadow_enabled = true
+shadow_bias = 0.434
+shadow_normal_bias = 5.141
+shadow_blur = 0.495
+spot_range = 4096.0
+spot_angle = 54.06
+
+[node name="Sketchfab_Scene" parent="WorldEnvironment/Room3" instance=ExtResource("20_tjl1n")]
+transform = Transform3D(1, 0, 0, 0, -0.0152013, 0.999884, 0, -0.999884, -0.0152013, 90, 50.4023, -51.608)
+script = ExtResource("30_gvglj")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="WorldEnvironment/Room3"]
+transform = Transform3D(0.0535388, -0.200975, 0.978132, 0.0109841, 0.979596, 0.200675, -0.998505, 8.39445e-09, 0.0546539, 321.28, 53.9614, 39.1439)
+light_color = Color(0.559824, 0.635929, 0.712622, 1)
+light_energy = 200.0
+distance_fade_begin = 246.87
+distance_fade_length = 4096.0
+spot_range = 287.532
+spot_angle = 17.88
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.992705, -3.69811e-09, -0.12057, 0.0744456, 0.786612, 0.612943, 0.0948417, -0.617448, 0.780873, 227.99, 220.843, -21.9171)
+light_color = Color(0.460775, 0.539378, 0.618286, 1)
+light_energy = 1000.0
+spot_range = 258.132
+spot_angle = 26.82
+
+[node name="Sketchfab_Scene" parent="WorldEnvironment" instance=ExtResource("31_khygk")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 247.54, -174.173, -169.832)
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 241.359, 143.17, 0)
+light_energy = 9.566
+shadow_enabled = true
+spot_range = 93.734
